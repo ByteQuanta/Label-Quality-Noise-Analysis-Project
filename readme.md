@@ -6,24 +6,26 @@ It includes label QA, noise estimation, drift diagnostics, embedding anomaly det
 
 The goal is to transform raw sensor data into a high-integrity dataset and a stable, noise-resistant model.
 
+```
 ## 📂 Repository Structure
 .
 ├── outputs/
-│   ├── plot_1_model_accuracy.png               # Model Accuracy (before vs after repair)
-│   ├── plot_2_activity_distribution.png        # Train/Test activity distribution
-│   ├── plot_3_drift_scores.png                 # Distribution of drift scores
-│   ├── plot_4_drifted_features.png             # Top 10 drifted features
-│   ├── plot_5_embedding_anomaly_clusters.png   # Embedding space anomaly clusters
-│   ├── noise_scores_sample.csv                 # Sample of noise scores per instance
+│ ├── plot_1_model_accuracy.png # Model Accuracy (before vs after repair)
+│ ├── plot_2_activity_distribution.png # Train/Test activity distribution
+│ ├── plot_3_drift_scores.png # Distribution of drift scores
+│ ├── plot_4_drifted_features.png # Top 10 drifted features
+│ ├── plot_5_embedding_anomaly_clusters.png # Embedding space anomaly clusters
+│ ├── noise_scores_sample.csv # Sample of noise scores per instance
 │
 ├── raw data/
-│   ├── human+activity+recognition+using+smartphones/   # Raw HAR dataset
+│ ├── human+activity+recognition+using+smartphones/ # Raw HAR dataset
 │
 ├── src/
-│   └── full_code.py                               # Full end-to-end pipeline
+│ └── full_code.py # Full end-to-end pipeline
 │
 ├── requirements.txt
-├── readme.md
+└── readme.md
+```
 
 ## 🚀 Pipeline Overview
 
