@@ -7,7 +7,7 @@ It includes label QA, noise estimation, drift diagnostics, embedding anomaly det
 The goal is to transform raw sensor data into a high-integrity dataset and a stable, noise-resistant model.
 
 ```
-## 📂 Repository Structure
+📂 Repository Structure
 .
 ├── outputs/
 │ ├── plot_1_model_accuracy.png # Model Accuracy (before vs after repair)
