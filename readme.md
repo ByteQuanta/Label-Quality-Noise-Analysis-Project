@@ -1,4 +1,4 @@
-📊 End-to-End Label Quality, Noise Estimation & Robust ML Pipeline
+## 📊 End-to-End Label Quality, Noise Estimation & Robust ML Pipeline
 Human Activity Recognition (HAR) – Complete Data Quality & Robustness Workflow
 
 This repository implements a full-stack, auditable, and production-ready data quality pipeline for Human Activity Recognition (HAR) datasets.
@@ -6,7 +6,7 @@ It includes label QA, noise estimation, drift diagnostics, embedding anomaly det
 
 The goal is to transform raw sensor data into a high-integrity dataset and a stable, noise-resistant model.
 
-📂 Repository Structure
+## 📂 Repository Structure
 .
 ├── outputs/
 │   ├── plot_1_model_accuracy.png               # Model Accuracy (before vs after repair)
@@ -25,7 +25,7 @@ The goal is to transform raw sensor data into a high-integrity dataset and a sta
 ├── requirements.txt
 ├── readme.md
 
-🚀 Pipeline Overview
+## 🚀 Pipeline Overview
 
 This project provides an end-to-end workflow covering:
 
@@ -111,7 +111,7 @@ Embedding space realignment (Plot 5)
 
 Final evaluation plots are all saved in the outputs/ directory.
 
-📈 Included Visualizations
+## 📈 Included Visualizations
 Plot 1 — Model Accuracy (Before vs After Repair)
 
 Quantifies improvement after noise mitigation.
@@ -132,7 +132,7 @@ Plot 5 — Embedding Anomaly Clusters
 
 Visualizes outliers in representation space.
 
-💾 Dataset
+## 💾 Dataset
 
 This project uses the Human Activity Recognition Using Smartphones dataset.
 
