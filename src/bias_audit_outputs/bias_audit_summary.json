@@ -1,0 +1,33 @@
+{
+  "dataset": "UCI HAR (surrogate)",
+  "overall_accuracy": 0.9348489989820156,
+  "per_subject_mean_accuracy": 0.9347421584263691,
+  "per_subject_std_accuracy": 0.05541874027004331,
+  "per_subject_bias_risk": "MEDIUM",
+  "time_drift_early_acc": 0.9341479972844535,
+  "time_drift_late_acc": 0.9355495251017639,
+  "time_drift_abs": 0.0014015278173103995,
+  "time_drift_risk": "LOW",
+  "class_counts_train": {
+    "1": 1226,
+    "2": 1071,
+    "3": 987,
+    "4": 1287,
+    "5": 1374,
+    "6": 1407
+  },
+  "annotator_bias": {
+    "exists": false,
+    "reason": "UCI HAR standard release has no per-sample annotator_id metadata available in this workspace.",
+    "recommendation": "If annotator metadata becomes available, compute per-annotator JS divergence vs global label distribution and confusion matrices."
+  },
+  "sensor_bias_notes": [
+    {
+      "true": 3,
+      "mean": 32.36305452966686,
+      "std": 14.893841321951303,
+      "count": 420
+    }
+  ],
+  "notes": "Demographic bias (gender/age) not applicable in this dataset."
+}

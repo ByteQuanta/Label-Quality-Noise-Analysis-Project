@@ -1,0 +1,10 @@
+{
+    "sensor_type": "accelerometer + gyroscope",
+    "sensor_brand": "Samsung",
+    "sensor_model": "Galaxy S II embedded IMU",
+    "sampling_rate_hz": 50,
+    "window_size_samples": 128,
+    "window_length_seconds": 2.56,
+    "data_source": "UCI HAR Smartphone Dataset",
+    "collection_protocol": "Fixed waist-mounted smartphone capturing body acceleration & gyro"
+}
