@@ -1,151 +1,116 @@
-## 📊 End-to-End Label Quality, Noise Estimation & Robust ML Pipeline
-Human Activity Recognition (HAR) – Complete Data Quality & Robustness Workflow
+## Label Quality & Noise Estimation Pipeline for HAR Datasets
+### Why this project exists
 
-This repository implements a full-stack, auditable, and production-ready data quality pipeline for Human Activity Recognition (HAR) datasets.
-It includes label QA, noise estimation, drift diagnostics, embedding anomaly detection, active learning, and robust model evaluation.
+In many data projects, label quality is often assumed to be correct, especially when using datasets like Human Activity Recognition (HAR). However, label errors and inconsistencies can significantly impact model performance.
 
-The goal is to transform raw sensor data into a high-integrity dataset and a stable, noise-resistant model.
+While working on this project, I asked myself a fundamental question:
 
-```
-📂 Repository Structure
-.
-├── outputs/
-│ ├── plot_1_model_accuracy.png # Model Accuracy (before vs after repair)
-│ ├── plot_2_activity_distribution.png # Train/Test activity distribution
-│ ├── plot_3_drift_scores.png # Distribution of drift scores
-│ ├── plot_4_drifted_features.png # Top 10 drifted features
-│ ├── plot_5_embedding_anomaly_clusters.png # Embedding space anomaly clusters
-│ ├── noise_scores_sample.csv # Sample of noise scores per instance
-│
-├── raw data/
-│ ├── human+activity+recognition+using+smartphones/ # Raw HAR dataset
-│
-├── src/
-│ └── full_code.py # Full end-to-end pipeline
-│
-├── requirements.txt
-└── readme.md
-```
+Can we trust the labels in this dataset enough to use them for training a model?
 
-## 🚀 Pipeline Overview
+This project focuses on answering that question before any modeling happens. The goal is not just model performance, but label quality, noise estimation, and data integrity.
 
-This project provides an end-to-end workflow covering:
+### What problem does this project address?
 
-1️⃣ Pre-Label QA
+When labels are assumed to be correct without proper validation:
 
-Initial dataset sanity and structure validation:
+Label noise can go unnoticed
 
-Activity distribution checks
+Data drift can distort model predictions over time
 
-Train/test human-activity drift detection
+Mislabeling can lead to poor model performance
 
-Entropy, rarity, and stability metrics
+Label inconsistencies can be hard to trace
 
-Logical feature–label consistency
+This project aims to:
 
-Human QA spot-check sampling
+Evaluate label quality using multiple noise detection methods
 
-2️⃣ Label Noise Estimation
+Identify and estimate the impact of label errors
 
-Multiple noise signals combined into a Unified Noise Score (UNS):
+Ensure high-quality labels before proceeding with model training
 
-Prediction stability scoring
+### High-level approach
 
-Model disagreement
+The pipeline is organized into distinct stages, each focused on improving dataset integrity and robustness:
 
-Per-sample loss curves
+Pre-Label QA
 
-Bayesian true-label probability
+Validate dataset structure and sanity
 
-Confidence-based estimators
+Detect activity distribution shifts and data drift
 
-UNS = weighted fusion of all noise indicators
+Ensure feature-label consistency
 
-3️⃣ Drift & Noise Diagnostics
+Label Noise Estimation
 
-Advanced detection modules:
+Compute Unified Noise Score (UNS) using multiple signals (model disagreement, per-sample loss)
 
-Drift score distribution
+Bayesian true-label probability estimation
 
-Top drifted features (Plot 4)
+Confidence-based estimators for noise detection
 
-Embedding-space cluster anomalies (Plot 5)
+Drift & Noise Diagnostics
 
-Logical rule-based inconsistencies
+Analyze drift in data and features
 
-Cluster-level noise localization
+Detect embedding space anomalies
 
-4️⃣ Noise Repair & Label Correction
+Identify logical inconsistencies in the dataset
 
-Lineage-aware correction tools:
+Noise Repair & Label Correction
 
-Soft relabeling (probabilistic)
+Use soft and hard relabeling techniques for noise correction
 
-Hard relabeling (high-certainty only)
+Versioned updates to maintain full transparency
 
-Multi-label merging for conflicting cases
+Active Learning Loop
 
-Versioned updates with full transparency
+Flag and return uncertain/ambiguous samples for human review
 
-5️⃣ Active Learning Loop
+Improve dataset quality by re-labeling and validation
 
-Samples with highest uncertainty / noise are:
+Post-Repair Model Validation
 
-flagged
+Assess model stability and accuracy after label repair
 
-returned to human review
+Track improvements in performance and reduce drift
 
-re-labeled or validated
+Validate label corrections with final evaluation plots
 
-Improves final dataset quality by 20–30%.
+### Outcome
 
-6️⃣ Post-Repair Model Validation
+After running the pipeline on the Human Activity Recognition dataset, it was clear that label noise and data drift were present, but the pipeline successfully mitigated these issues. The final model showed an improvement in accuracy and stability, even in the presence of noisy labels and drift.
 
-Ensures the pipeline truly improves model performance:
+Stopping at this stage, with a high-quality dataset and robust model, was considered a success.
 
-Accuracy before vs after cleaning (Plot 1)
+### What I learned
 
-Stability and robustness across activity slices
+Label quality is critical for model success, and noise can undermine performance if not addressed early.
 
-Drift reduction verification (Plots 3 & 4)
+Drift detection and active learning loops can significantly improve the final model.
 
-Embedding space realignment (Plot 5)
+Transparency in the process of correcting label noise is essential for reproducibility and trust.
 
-Final evaluation plots are all saved in the outputs/ directory.
+Data integrity must be prioritized over rushing to build a model.
 
-## 📈 Included Visualizations
-Plot 1 — Model Accuracy (Before vs After Repair)
+### Scope and limitations
 
-Quantifies improvement after noise mitigation.
+This is a learning-focused project designed for educational purposes, not a production-ready system.
 
-Plot 2 — Activity Distribution (Train vs Test)
+The pipeline focuses on label quality and data drift, and other factors such as bias or sensor errors may need additional attention.
 
-Reveals imbalance or split drift.
+The methods used are tailored to HAR datasets; adaptations may be needed for other domains.
 
-Plot 3 — Drift Score Distribution
+### Background
 
-Shows the severity and spread of drift across samples.
+I am a Statistics graduate with a focus on data integrity, noise handling, and model robustness. I am working on projects that address real-world data issues and improve machine learning workflows, especially in terms of dataset quality and trust.
 
-Plot 4 — Top 10 Drifted Features
+Feedback and suggestions are always welcome.
 
-Highlights which sensor features are most unstable.
+### Dataset
 
-Plot 5 — Embedding Anomaly Clusters
+This project uses the Human Activity Recognition Using Smartphones dataset. The dataset can be found here:
 
-Visualizes outliers in representation space.
+👉 Dataset Link
 
-## 💾 Dataset
-
-This project uses the Human Activity Recognition Using Smartphones dataset.
-
-📎 Dataset Link:
-https://archive.ics.uci.edu/ml/datasets/human+activity+recognition+using+smartphones
-
-📁 The dataset is included locally under:
-
-raw data/human+activity+recognition+using+smartphones/
-
-⚠️ Important Note
-
-The source of the dataset used for this project is provided in the link above.
-The original, unmodified raw data is also included in this repository inside the raw data/ folder to ensure complete transparency, reproducibility, and ease of use.
+The dataset is included locally in the raw data/human+activity+recognition+using+smartphones/ folder for full transparency.
