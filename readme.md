@@ -111,6 +111,6 @@ Feedback and suggestions are always welcome.
 
 This project uses the Human Activity Recognition Using Smartphones dataset. The dataset can be found here:
 
-👉 Dataset Link
+👉 Dataset Link https://archive.ics.uci.edu/dataset/240/human+activity+recognition+using+smartphones
 
 The dataset is included locally in the raw data/human+activity+recognition+using+smartphones/ folder for full transparency.
