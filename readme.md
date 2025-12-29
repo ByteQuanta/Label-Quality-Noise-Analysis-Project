@@ -64,7 +64,7 @@ Stability-focused evaluation rather than performance optimization
 
 The analysis revealed the presence of label noise and distributional inconsistencies in the dataset.
 
-After applying label repair strategies, model behavior became more stable and interpretable.
+After applying label repair strategies, model behavior showed improved stability and consistency.
 At this stage, stopping with a cleaner and better-understood dataset was considered a successful outcome.
 
 ## Key takeaways
@@ -87,6 +87,6 @@ At this stage, stopping with a cleaner and better-understood dataset was conside
 
 ## Dataset
 Human Activity Recognition Using Smartphones Dataset
-Source: UCI Machine Learning Repository [👉 Dataset Link https://archive.ics.uci.edu/dataset/240/human+activity+recognition+using+smartphones]
+Source: UCI Machine Learning Repository [👉 https://archive.ics.uci.edu/dataset/240/human+activity+recognition+using+smartphones]
 
 The dataset is included locally for transparency and reproducibility.
