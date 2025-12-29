@@ -1,81 +1,64 @@
 ## Label Quality & Noise Estimation Pipeline for HAR Datasets
-### Why this project exists
+## Why this project exists
 
-In many data projects, label quality is often assumed to be correct, especially when using datasets like Human Activity Recognition (HAR). However, label errors and inconsistencies can significantly impact model performance.
+In many machine learning projects, label correctness is often assumed without explicit validation.
+However, even small amounts of label noise can significantly affect model stability, interpretability, and downstream decisions.
 
-While working on this project, I asked myself a fundamental question:
+This project focuses on evaluating label quality and estimating label noise before relying on the dataset for modeling.
 
-Can we trust the labels in this dataset enough to use them for training a model?
-
-This project focuses on answering that question before any modeling happens. The goal is not just model performance, but label quality, noise estimation, and data integrity.
+Rather than optimizing model performance, the primary goal is to understand whether the labels can be trusted.
 
 ### What problem does this project address?
 
-When labels are assumed to be correct without proper validation:
+When label quality is not explicitly assessed:
 
-Label noise can go unnoticed
+- Label noise can remain hidden
 
-Data drift can distort model predictions over time
+- Model performance may appear unstable or misleading
 
-Mislabeling can lead to poor model performance
+- Errors in labeling are difficult to diagnose
 
-Label inconsistencies can be hard to trace
+- Downstream modeling decisions become unreliable
 
-This project aims to:
-
-Evaluate label quality using multiple noise detection methods
-
-Identify and estimate the impact of label errors
-
-Ensure high-quality labels before proceeding with model training
+This project aims to make label quality visible, measurable, and analyzable.
 
 ### High-level approach
 
-The pipeline is organized into distinct stages, each focused on improving dataset integrity and robustness:
+The pipeline is organized into analytical stages focused on diagnosing label quality:
 
-Pre-Label QA
+### Pre-label sanity checks
 
-Validate dataset structure and sanity
+Dataset structure and consistency validation
 
-Detect activity distribution shifts and data drift
+Class distribution inspection
 
-Ensure feature-label consistency
+Feature–label relationship checks
 
-Label Noise Estimation
+### Label noise analysis
 
-Compute Unified Noise Score (UNS) using multiple signals (model disagreement, per-sample loss)
+Noise estimation using multiple signals (e.g. model disagreement, per-sample loss)
 
-Bayesian true-label probability estimation
+Confidence-based indicators for potentially noisy samples
 
-Confidence-based estimators for noise detection
+### Drift & inconsistency diagnostics
 
-Drift & Noise Diagnostics
+Detection of distribution shifts
 
-Analyze drift in data and features
+Identification of anomalous samples in feature space
 
-Detect embedding space anomalies
+Logical consistency checks across activities
 
-Identify logical inconsistencies in the dataset
+### Label repair experiments
 
-Noise Repair & Label Correction
+Exploration of soft and hard relabeling strategies
 
-Use soft and hard relabeling techniques for noise correction
+Versioned label updates to preserve traceability
 
-Versioned updates to maintain full transparency
+### Post-analysis validation
 
-Active Learning Loop
+Comparison of model behavior before and after label adjustments
 
-Flag and return uncertain/ambiguous samples for human review
-
-Improve dataset quality by re-labeling and validation
-
-Post-Repair Model Validation
-
-Assess model stability and accuracy after label repair
-
-Track improvements in performance and reduce drift
-
-Validate label corrections with final evaluation plots
+Stability-focused evaluation rather than performance optimization
 
 ### Outcome
 
