@@ -1,4 +1,4 @@
-## Label Quality & Noise Estimation Pipeline for HAR Datasets
+# Label Quality & Noise Estimation Pipeline for HAR Datasets
 ## Why this project exists
 
 In many machine learning projects, label correctness is often assumed without explicit validation.
@@ -8,7 +8,7 @@ This project focuses on evaluating label quality and estimating label noise befo
 
 Rather than optimizing model performance, the primary goal is to understand whether the labels can be trusted.
 
-### What problem does this project address?
+## What problem does this project address?
 
 When label quality is not explicitly assessed:
 
@@ -22,7 +22,7 @@ When label quality is not explicitly assessed:
 
 This project aims to make label quality visible, measurable, and analyzable.
 
-### High-level approach
+## High-level approach
 
 The pipeline is organized into analytical stages focused on diagnosing label quality:
 
@@ -60,40 +60,33 @@ Comparison of model behavior before and after label adjustments
 
 Stability-focused evaluation rather than performance optimization
 
-### Outcome
+## Outcome
 
-After running the pipeline on the Human Activity Recognition dataset, it was clear that label noise and data drift were present, but the pipeline successfully mitigated these issues. The final model showed an improvement in accuracy and stability, even in the presence of noisy labels and drift.
+The analysis revealed the presence of label noise and distributional inconsistencies in the dataset.
 
-Stopping at this stage, with a high-quality dataset and robust model, was considered a success.
+After applying label repair strategies, model behavior became more stable and interpretable.
+At this stage, stopping with a cleaner and better-understood dataset was considered a successful outcome.
 
-### What I learned
+## Key takeaways
 
-Label quality is critical for model success, and noise can undermine performance if not addressed early.
+- Label quality has a direct impact on model reliability
 
-Drift detection and active learning loops can significantly improve the final model.
+- Noise analysis is valuable even before advanced modeling
 
-Transparency in the process of correcting label noise is essential for reproducibility and trust.
+- Transparent diagnostics improve trust in data-driven workflows
 
-Data integrity must be prioritized over rushing to build a model.
+- Improving dataset integrity can be more important than optimizing models
 
-### Scope and limitations
+## Scope and limitations
 
-This is a learning-focused project designed for educational purposes, not a production-ready system.
+- This project is designed for learning and analysis purposes
 
-The pipeline focuses on label quality and data drift, and other factors such as bias or sensor errors may need additional attention.
+- Methods are exploratory rather than production-ready
 
-The methods used are tailored to HAR datasets; adaptations may be needed for other domains.
+- Techniques are tailored to HAR-style datasets and may require adaptation elsewhere
 
-### Background
+## Dataset
+Human Activity Recognition Using Smartphones Dataset
+Source: UCI Machine Learning Repository [👉 Dataset Link https://archive.ics.uci.edu/dataset/240/human+activity+recognition+using+smartphones]
 
-I am a Statistics graduate with a focus on data integrity, noise handling, and model robustness. I am working on projects that address real-world data issues and improve machine learning workflows, especially in terms of dataset quality and trust.
-
-Feedback and suggestions are always welcome.
-
-### Dataset
-
-This project uses the Human Activity Recognition Using Smartphones dataset. The dataset can be found here:
-
-👉 Dataset Link https://archive.ics.uci.edu/dataset/240/human+activity+recognition+using+smartphones
-
-The dataset is included locally in the raw data/human+activity+recognition+using+smartphones/ folder for full transparency.
+The dataset is included locally for transparency and reproducibility.
